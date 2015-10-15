@@ -1,0 +1,131 @@
+# Computing-project-and-tutorial
+import time
+def vinput():
+    while True:
+        try:
+            inp=input("Please enter a or b: ").lower()
+            if inp in ["a","b"]:
+                break
+            else:
+                print("That's not a valid number")
+        except:
+            print("That's not even an input!")
+    
+    return inp
+time.sleep(1)
+print("----------------School Adventure---------------")
+time.sleep(1)
+print("-------------------Blue Group--------------")
+print("\n")
+time.sleep(1)
+print("You are sitting in the classroom.Your teacher annoys you.  Do you:")
+time.sleep(1)
+print("a) Sit quietly.")
+
+print("b) Punch them in the face")
+x = vinput()
+
+#Sit quietly
+if x == "a":
+    print("You carry on with your lesson but the teacher continues to annoy you.")
+    print ("What are you going to do?")
+    print ("a) Ignore the teacher the end of the lesson is near")
+    print ("b) You cannot stand this anymore and scream at the teacher")
+    x= vinput ()
+    if x=="a":
+        print ("You did the right thing and continue your studies to receive a degree")
+    elif x=="b":
+        print ("The class laugh at you and the teacher sends you out of the room")
+        print ("Where are you going to go now the head teacher is on his way")
+        print ("a) Stay where you are, you do not want to get in trouble with the head teacher")
+        print ("b) Press the fire alarm and run out of the nearest exit")
+        x=vinput()
+        if x=="a":
+            print ("The head teacher comes and you are sent to his office")
+        elif x=="b":
+            print ("You have set the alarm off, the entire school are looking for you")
+            print ("How are you going to get out of this one?")
+            print ("a) Jump over the school gate to make a quick escape")
+            print ("b) Hand yourself in, you do not want to get into more trouble")
+            x=vinput()
+            if x=="a":
+                print ("You made the wrong choice, you are in a lot of trouble")
+            elif x=="b":
+                print ("You have made the right choice, you are in a lot of trouble but the school forgive you")
+            
+    
+#punch teacher in the face    
+elif x == "b":
+    print("  ")
+    print("The teacher still annoys you. He is shouting at you")
+    time.sleep(1)
+    print("You are so furious! Do you:")
+
+    print("a) jump out the window.")
+    print("b) walk out the door")
+    x = vinput()
+
+#jump out the window
+    if x == "a":
+        print("you are dead. End of the game")
+
+#walk out the door
+    elif x == "b":
+        print("you hear voices: your headteacher's voice and your teacher's")
+        time.sleep(2)
+    
+        print("What do you do now?:")
+        print("a) Hide in the nearest toilet.")
+        
+        print("b) punch someone else in the face")
+        x = vinput()   
+    #find window to jump out
+        if x == "a":
+            print("You find a window and climb out. Where are you going to go now?")
+            print ("a) Run towards the school gate you may be able to exit")
+            print ("b) Hide in the school away from the teachers")
+            x=vinput()
+            if x=="a":
+                print ("The gate is locked, the teacher sees you")
+            elif x=="b":
+                print ("The teachers cannot find you")
+                print ("You manage to hide until the end of the day and then run home")
+        
+
+    #Punch someone else in the face.
+        elif x == "b":
+            print("You see a possible target in the corridor.")
+            time.sleep(1)
+            print ("He looks very scared")
+            print("What do you do now?:")
+            print("a) Think twice about it and return to the classroom")
+            
+            print("b) Go for it!")
+            x = vinput()
+        #You get suspended 
+            if x == "a":
+                print("You go back to the classroom and the teacher suspends you.")
+
+        #Go for it 
+            elif x == "b":
+                print("You went for it and missed")
+                time.sleep(1)
+                print ("He is very angry!")
+                print("What do you do now?:")
+                print("a) Throw your book at him")
+               
+                print("b) Run away!")
+                time.sleep(1)
+                x= vinput()
+                if x=="a":
+                    # book
+                    print(" You've just ruined your class notes, the book knocked him out")
+                    
+                   #run away 
+                elif x == "b":
+                    print ("You have made yourself look like an idiot, well done!")
+                    
+                
+else:
+    print("That was not an option.  Game Over")
+
