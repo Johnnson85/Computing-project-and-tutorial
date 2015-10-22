@@ -1,0 +1,99 @@
+# Computing-project-and-tutorial 
+# Tic tac toe game.
+welcome= "Welcome to Tic-Tac-Toe"
+print (welcome.center(80))
+
+def vinput():
+    while True:
+        try:
+            userInput= input ("Player one (X) select your spot:")
+            userInputInt= (int (userInput))-1
+            if userIntputInt in range (0,8):
+                break
+            else:
+                print("That's not a valid number")
+        except:
+            print("That's not even an input!")
+
+
+
+
+#Creating the board
+theBoardLayout= [1,2,3,4,5,6,7,8,9]
+def drawingTheBoard():
+    print (theBoardLayout[6],"|",theBoardLayout [7],"|",theBoardLayout[8])
+    print ("---------")
+    print (theBoardLayout[3],"|", theBoardLayout[4],"|",theBoardLayout[5])
+    print ("---------")
+    print (theBoardLayout[0],"|", theBoardLayout[1],"|",theBoardLayout[2])
+
+def checkWinner (box0, box1, box2, box3):
+    if theBoardLayout[box1]== box0 and theBoardLayout[box2]== box0 and theBoardLayout [box3] == box0:
+        return True
+def check (box0):
+    if checkWinner (box0, 0,1,2):
+        return True
+    if checkWinner (box0, 3,4,5):
+        return True
+    if checkWinner (box0, 6,7,8):
+        return True
+    if checkWinner (box0, 0,3,6):
+        return True
+    if checkWinner (box0, 1,4,7):
+        return True
+    if checkWinner (box0, 2,5,8):
+        return True
+    if checkWinner (box0, 0,4,8):
+        return True
+    if checkWinner (box0, 2,4,6):
+        return True
+  
+drawingTheBoard()
+
+#Getting a user input
+
+def turnOne(won):
+    while True:
+        userInput= input ("Player one (X) select your spot:")
+        userInputInt= (int (userInput))-1
+        if theBoardLayout[userInputInt]!= "x" and theBoardLayout[userInputInt] != "o":
+            theBoardLayout [userInputInt] = "x"
+
+            if check("x") == True:
+                print ("X is the winner! Well done")
+                won=True
+            drawingTheBoard()
+            return won
+            
+        else:
+            print ("This spot is taken, please pick another spot")
+def turnTwo(won):  
+    while True:
+        userInput2= input ("Player two (O) select your spot:")
+        userInput2Int= (int (userInput2))-1
+        if theBoardLayout[userInput2Int]!= "o" and theBoardLayout[userInput2Int] != "x":
+            theBoardLayout [userInput2Int] = "o"
+        
+
+            if check("o") == True:
+                print ("O is the winner! Well done")
+            drawingTheBoard()
+            return won
+
+        else:
+            print ("This spot is taken, please pick another spot")
+        
+    
+p1=True
+won=False
+count=0
+while not won and count in range(0,8):
+    if p1:
+        won=turnOne(won)
+    else:
+        won=turnTwo(won)
+    p1=not p1
+
+print("Game Over")
+
+
